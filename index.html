@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <!--1. todo-->
+      <div class="todo">
+        <div class="todo__column1">
+          <form id="todo-form">
+            <input type="text" id="todo-input" required />
+          </form>
+        </div>
+
+        <div class="todo__column2">
+          <ul id="todo-list"></ul>
+        </div>
+
+        <div class="todo__column3">3</div>
+      </div>
+
+      <!--2. date, login-->
+      <div class="login">
+        <div class="login__column1">
+          <span id="date"></span>
+        </div>
+
+        <div class="login__column2">
+          <span id="clock">00:00</span>
+        </div>
+
+        <div class="login__column3">
+          <form id="login-form">
+            <input type="text" id="login-input" required />
+            <input type="submit" id="login-btn" value="Click" />
+          </form>
+
+          <!--로그인 시-->
+          <div id="greeting" class="hidden">
+            <div id="greeting__name">
+              <span id="greeting__name-name">Hello</span>
+            </div>
+
+            <div id="greeting__weather">WEATHER</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--JS-->
+    <script src="js/clock.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>
