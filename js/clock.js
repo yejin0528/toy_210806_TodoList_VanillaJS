@@ -20,6 +20,6 @@ function getClock() {
 
     clock.innerText = `${hour}:${min}:${sec}`;
 }
-getDate();
+//getDate();
 getClock();
 setInterval(getClock, 1000);

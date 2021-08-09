@@ -27,9 +27,9 @@
 
       <!--2. date, login-->
       <div class="login">
-        <div class="login__column1">
+        <!--<div class="login__column1">
           <span id="date"></span>
-        </div>
+        </div>-->
 
         <div class="login__column2">
           <span id="clock">00:00</span>
@@ -45,9 +45,16 @@
           <div id="greeting" class="hidden">
             <div id="greeting__name">
               <span id="greeting__name-name">Hello</span>
+              <input type="button" id="logout-btn" value="💛" />
             </div>
 
-            <div id="greeting__weather">WEATHER</div>
+            <div id="greeting__weather">
+              <span></span>
+              <div>
+                <img id="greeing__weather-icon" src="" />
+                <span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -58,5 +65,6 @@
     <script src="js/greeting.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>

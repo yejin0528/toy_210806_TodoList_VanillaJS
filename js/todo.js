@@ -12,13 +12,18 @@ function saveTodo() {
 
 function deleteTodo(event) {
     const li = event.target.parentElement;  //해당 li의 부모 엘리먼트
-    li.remove();
+    li.remove(); //화면에서 삭제
+    todos = todos.filter(item => item.id != parseInt(li.id))
+    // firter : 삭제할 li의 id가 로컬스토리지 todos의 id와 같으면 삭제(false)
+    // parstInt(li.id) : todo 데이터 추가 시(saveTodo), stringfy(todos)로 string으로 저장됨 > int로 형변환 필요!
+    saveTodo();
 }
 
 function paintTodo(newTodo) {
     const li = document.createElement('li');
+    li.id = newTodo.id; //li 속성 id 추가
     const span = document.createElement('span');
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
 
     const delBtn = document.createElement('button');
     delBtn.innerText = "X";
@@ -33,10 +38,14 @@ function TodoSubmit(event) {
     event.preventDefault();
     const newTodo = todoInput.value;
     todoInput.value = "";
+    const newTodoObj = {  //key:value로 저장!
+        id: Date.now(), //Todo id
+        text: newTodo,  //Todo text
+    };
 
-    todos.push(newTodo) //배열에 추가
-    paintTodo(newTodo);  //화면에 출력
-    saveTodo();  //로컬 키 TODOS에 저장
+    todos.push(newTodoObj) //배열에 추가
+    paintTodo(newTodoObj);  //화면에 출력
+    saveTodo();  //로컬스토리지 TODOS에 저장
 }
 
 todoForm.addEventListener("submit", TodoSubmit);
