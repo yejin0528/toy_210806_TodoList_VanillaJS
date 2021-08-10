@@ -8,7 +8,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const LOCAL_KEY = "USERNAME_KEY";
 
 function paintGreeting(username) {
-    greetingName.innerText = `HELLO, ${username}!`;
+    greetingName.innerText = `HELLO, ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
     loginForm.classList.add(HIDDEN_CLASSNAME);
     logoutBtn.addEventListener('click', onLogoutBtn);

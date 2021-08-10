@@ -7,21 +7,38 @@
   display: none;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-}
-
 body {
   font-family: "Baloo 2";
   color: #f9f9f9;
 
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+
+  padding-left: 10px;
+  border-radius: 3px;
+  border: solid 2px whitesmoke;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  font-family: FontAwesome; /*버튼 value에 icon 사용*/
+
+  padding: 0px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .main-container {
@@ -31,24 +48,94 @@ body {
   align-items: center;
 }
 
-/*2. date, login*/
+.todo,
 .login {
+  margin: 0px 80px;
+}
+
+/*1. todo*/
+.todo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo__row-date {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.todo__row-list {
+  padding: 25px;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  font-size: 22px;
+}
+
+.todo__row-date #date {
+  font-size: 26px;
+}
+
+#todo-input {
+  width: 280px;
+  margin-bottom: 25px;
+}
+
+/*2. date, login*/
+.login {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 /*clock*/
 .login__column2 #clock {
-  font-size: 70px;
+  font-size: 80px;
+}
+
+/*login-form*/
+.login__column3 {
+  margin-top: 25px;
 }
 
 /*greeting*/
-#greeting__name {
-  font-size: 25px;
+#greeting {
+  text-align: center;
 }
 
-#greeting__name #logout-btn {
-  background: transparent;
-  border: none;
+#greeting__name {
+  font-size: 25px;
+  margin: 25px 0;
+}
+
+/*weather*/
+#greeting__weather {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#greeting__weather-main {
+  font-size: 22px;
+}
+
+#greeting__weather-temp {
+  margin-left: 15px;
+  font-size: 35px;
+}
+
+#greeting__weather-max,
+#greeting__weather-min {
+  font-size: 18px;
 }

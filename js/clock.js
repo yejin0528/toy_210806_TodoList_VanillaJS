@@ -3,12 +3,15 @@ const clock = document.querySelector("#clock");
 
 function getDate() {
     const today = new Date();
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
 
     const year = String(today.getFullYear());
-    const month = String(today.getMonth());
+    const strMon = monthNames[today.getMonth()]; //getMonth() : 0부터 시작, 1월이 0
     const day = String(today.getDay());
+    console.log(today.getMonth());
 
-    date.innerText = `${year}/${month}/${day}`;
+    date.innerText = `${strMon} ${day}, ${year}`;
 }
 
 function getClock() {
@@ -20,6 +23,6 @@ function getClock() {
 
     clock.innerText = `${hour}:${min}:${sec}`;
 }
-//getDate();
+getDate();
 getClock();
 setInterval(getClock, 1000);

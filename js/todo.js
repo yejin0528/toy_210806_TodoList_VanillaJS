@@ -25,11 +25,17 @@ function paintTodo(newTodo) {
     const span = document.createElement('span');
     span.innerText = newTodo.text;
 
+    const checkBtn = document.createElement('button');
+    checkBtn.innerText = "✔";
+    //checkBtn.addEventListener
+
     const delBtn = document.createElement('button');
-    delBtn.innerText = "X";
+    delBtn.innerText = "❌";
     delBtn.addEventListener('click', deleteTodo);
 
     li.appendChild(span);
+
+    li.appendChild(checkBtn);
     li.appendChild(delBtn);
     todoList.appendChild(li);
 }

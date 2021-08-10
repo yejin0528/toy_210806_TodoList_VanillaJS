@@ -12,17 +12,25 @@
     <div class="main-container">
       <!--1. todo-->
       <div class="todo">
-        <div class="todo__column1">
+        <div class="todo__row todo__row-date">
+          <span id="date"></span><br />
+          <span>ToDo List !</span>
+        </div>
+
+        <div class="todo__row">
           <form id="todo-form">
-            <input type="text" id="todo-input" required />
+            <input
+              type="text"
+              id="todo-input"
+              placeholder="Add task"
+              required
+            />
           </form>
         </div>
 
-        <div class="todo__column2">
+        <div class="todo__row todo__row-list">
           <ul id="todo-list"></ul>
         </div>
-
-        <div class="todo__column3">3</div>
       </div>
 
       <!--2. date, login-->
@@ -37,8 +45,13 @@
 
         <div class="login__column3">
           <form id="login-form">
-            <input type="text" id="login-input" required />
-            <input type="submit" id="login-btn" value="Click" />
+            <input
+              type="text"
+              id="login-input"
+              placeholder="What is your name?"
+              required
+            />
+            <input type="submit" id="login-btn" value="💜" />
           </form>
 
           <!--로그인 시-->
@@ -49,10 +62,29 @@
             </div>
 
             <div id="greeting__weather">
-              <span></span>
-              <div>
-                <img id="greeing__weather-icon" src="" />
-                <span></span>
+              <!--row1. city-->
+              <div class="greeting__weather__row">
+                <span id="greeting__weather-main"></span>
+              </div>
+
+              <!--row2. icon-->
+              <div class="greeting__weather__row">
+                <img id="greeting__weather-icon" src="" />
+              </div>
+
+              <!--row3. temp-->
+              <div class="greeting__weather__row">
+                <!--temp-->
+                <span id="greeting__weather-temp"></span>
+                <br />
+
+                <!--max-->
+                <i class="fas fa-thermometer-full"></i>
+                <span id="greeting__weather-max"></span>
+
+                <!--min-->
+                <i class="fas fa-thermometer-empty"></i>
+                <span id="greeting__weather-min"></span>
               </div>
             </div>
           </div>
@@ -66,5 +98,10 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+
+    <!--font awesome-->
+
+    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
   </body>
 </html>

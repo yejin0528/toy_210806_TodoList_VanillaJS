@@ -6,15 +6,21 @@ function geoOk(position) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
     fetch(url).then(response => response.json()).then(data => {
-        const weatherCity = document.querySelector("#greeting__weather span:first-child");
-        const weatherMain = document.querySelector("#greeting__weather div span");
-        const weatherIcon = document.querySelector("#greeing__weather-icon");
-
-        weatherCity.innerText = data.name;
-        weatherMain.innerText = data.weather[0].main;
+        const weatherCity = document.querySelector("#greeting__weather-main");
+        //const weatherMain = document.querySelector("#greeting__weather div span");
+        const weatherIcon = document.querySelector("#greeting__weather-icon");
+        const weatherTemp = document.querySelector("#greeting__weather-temp");
+        const weatherMax = document.querySelector("#greeting__weather-max");
+        const weatherMin = document.querySelector("#greeting__weather-min");
+        weatherCity.innerText = `Weather in ${data.name}`;
+        //weatherMain.innerText = data.weather[0].main;
         icon = data.weather[0].icon;
         iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
         weatherIcon.src = iconSrc;
+
+        weatherTemp.innerText = `${data.main.temp}°C`;
+        weatherMax.innerText = `${data.main.temp_max}°C`;
+        weatherMin.innerText = `${data.main.temp_min}°C`;
     });
 }
 
