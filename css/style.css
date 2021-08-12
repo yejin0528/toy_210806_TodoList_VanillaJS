@@ -3,6 +3,11 @@
 /*font*/
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap");
 
+.text-line {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
 .hidden {
   display: none;
 }
@@ -11,7 +16,7 @@ body {
   font-family: "Baloo 2";
   color: #f9f9f9;
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -28,11 +33,13 @@ input {
   border: solid 2px whitesmoke;
 }
 
+input:focus {
+  outline: none;
+}
+
 button,
 input[type="submit"],
 input[type="button"] {
-  font-family: FontAwesome; /*버튼 value에 icon 사용*/
-
   padding: 0px;
   width: 20px;
   height: 20px;
@@ -46,11 +53,38 @@ input[type="button"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 50px;
 }
 
 .todo,
 .login {
   margin: 0px 80px;
+}
+
+/*0. nav-bar*/
+/*playlist*/
+.nav_bar {
+  padding: 5px;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  background-color: black;
+}
+
+.bgm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  border: solid 3.5px whitesmoke;
+  border-radius: 15px;
+}
+
+.bgm span,
+.bgm__btn {
+  font-size: 25px;
+  color: #f9f9f9;
 }
 
 /*1. todo*/

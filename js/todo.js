@@ -5,6 +5,8 @@ const todoList = document.querySelector('#todo-list');
 const TODO_KEY = "TODOS";
 let todos = [];
 
+const TEXTLINE_CLASS = "text-line";
+
 function saveTodo() {
     localStorage.setItem(TODO_KEY, JSON.stringify(todos));
     //JSON.stringify : 뭐든 문자열로 바꿈  ex)["1", "2", "3"]
@@ -19,6 +21,12 @@ function deleteTodo(event) {
     saveTodo();
 }
 
+function checkTodo(event) {
+    const li = event.target.parentElement;
+    li.classList.toggle(TEXTLINE_CLASS);
+
+}
+
 function paintTodo(newTodo) {
     const li = document.createElement('li');
     li.id = newTodo.id; //li 속성 id 추가
@@ -27,10 +35,10 @@ function paintTodo(newTodo) {
 
     const checkBtn = document.createElement('button');
     checkBtn.innerText = "✔";
-    //checkBtn.addEventListener
+    checkBtn.addEventListener('click', checkTodo);
 
     const delBtn = document.createElement('button');
-    delBtn.innerText = "❌";
+    delBtn.innerText = "✖";
     delBtn.addEventListener('click', deleteTodo);
 
     li.appendChild(span);

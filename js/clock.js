@@ -9,7 +9,6 @@ function getDate() {
     const year = String(today.getFullYear());
     const strMon = monthNames[today.getMonth()]; //getMonth() : 0부터 시작, 1월이 0
     const day = String(today.getDay());
-    console.log(today.getMonth());
 
     date.innerText = `${strMon} ${day}, ${year}`;
 }
