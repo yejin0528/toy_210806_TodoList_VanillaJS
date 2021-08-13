@@ -1,5 +1,6 @@
 const date = document.querySelector("#date");
 const clock = document.querySelector("#clock");
+const hello = document.querySelector(".hello");
 
 function getDate() {
     const today = new Date();
@@ -22,6 +23,21 @@ function getClock() {
 
     clock.innerText = `${hour}:${min}:${sec}`;
 }
+
+function getHello() {
+    const today = new Date();
+    const hour = parseInt(today.getHours());
+
+    if (hour > 6 && hour < 12) { //6~11시이면
+        hello.innerText = "Good Morning, ";
+    } else if (hour < 20) {  //12~19시이면
+        hello.innerText = "Good afternoon, ";
+    } else {
+        hello.innerText = "Good night, ";
+    }
+}
+
+getHello();
 getDate();
 getClock();
 setInterval(getClock, 1000);

@@ -3,6 +3,10 @@
 /*font*/
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 .text-line {
   text-decoration: line-through;
   font-style: italic;
@@ -25,15 +29,24 @@ body {
 }
 
 input {
-  width: 200px;
-  height: 30px;
+  width: 280px;
+  height: 40px;
 
-  padding-left: 10px;
-  border-radius: 3px;
-  border: solid 2px whitesmoke;
+  background-color: inherit;
+  border: none;
+  border-bottom: solid 3px #f9f9f9;
+}
+
+input::placeholder {
+  font-size: 30px;
+  font-family: "Baloo 2";
+  color: #f9f9f9;
 }
 
 input:focus {
+  font-size: 30px;
+  font-family: "Baloo 2";
+  color: #f9f9f9;
   outline: none;
 }
 
@@ -53,7 +66,7 @@ input[type="button"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 .todo,
@@ -61,40 +74,44 @@ input[type="button"] {
   margin: 0px 80px;
 }
 
-/*0. nav-bar*/
-/*playlist*/
+/*****0. nav-bar*****/
+/*playlist, Github*/
 .nav_bar {
-  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
   width: 100%;
   height: 50px;
   position: fixed;
-  background-color: black;
+  background-color: inherit;
 }
 
-.bgm {
+.bgm,
+.github {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 35px;
+  width: 130px;
+  height: 38px;
   border: solid 3.5px whitesmoke;
   border-radius: 15px;
 }
 
 .bgm__title,
-.bgm__btn {
+.bgm__btn,
+.fa-github {
   font-size: 23px;
   color: #f9f9f9;
 }
 
-.bgm__title {
+.bgm__title,
+.github__title {
   font-size: 25px;
   margin-right: 3px;
 }
 
-/*GITHUB*/
-
-/*1. todo*/
+/*****1. todo*****/
 .todo {
   display: flex;
   flex-direction: column;
@@ -103,22 +120,22 @@ input[type="button"] {
 }
 
 .todo__row-date {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 30px;
+  font-size: 45px;
 }
 
 .todo__row-list {
   padding: 25px;
-  width: 250px;
+  width: 280px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .todo__row-date #date {
-  font-size: 26px;
+  font-size: 35px;
 }
 
 #todo-input {
@@ -126,7 +143,7 @@ input[type="button"] {
   margin-bottom: 25px;
 }
 
-/*2. date, login*/
+/******2. date, login, hello******/
 .login {
   height: 70%;
   display: flex;
@@ -135,9 +152,24 @@ input[type="button"] {
   align-items: center;
 }
 
-/*clock*/
-.login__column2 #clock {
-  font-size: 80px;
+.login__column:first-child {
+  margin-bottom: 40px;
+}
+
+.login__column #clock {
+  font-size: 75px;
+}
+
+/*loginMain*/
+.login__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hello {
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 /*login-form*/
@@ -151,7 +183,7 @@ input[type="button"] {
 }
 
 #greeting__name {
-  font-size: 25px;
+  font-size: 40px;
   margin: 25px 0;
 }
 

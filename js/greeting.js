@@ -1,5 +1,6 @@
+const loginMain = document.querySelector("#login__main");
 const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-input");
+const loginInput = document.querySelector(".login-input");
 const greeting = document.querySelector("#greeting");
 const greetingName = document.querySelector("#greeting__name-name");
 const logoutBtn = document.querySelector("#logout-btn");
@@ -8,9 +9,9 @@ const HIDDEN_CLASSNAME = "hidden";
 const LOCAL_KEY = "USERNAME_KEY";
 
 function paintGreeting(username) {
-    greetingName.innerText = `HELLO, ${username}`;
+    greetingName.innerText = `Hello, ${username} :D`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.classList.add(HIDDEN_CLASSNAME);
+    loginMain.classList.add(HIDDEN_CLASSNAME);
     logoutBtn.addEventListener('click', onLogoutBtn);
 }
 
@@ -31,7 +32,7 @@ function checkUserName() {
 
     if (savedUserName == null) { //로컬값 존재하지 않으면
         loginInput.value = "";
-        loginForm.classList.remove(HIDDEN_CLASSNAME);
+        loginMain.classList.remove(HIDDEN_CLASSNAME);
         greeting.classList.add(HIDDEN_CLASSNAME);
         loginForm.addEventListener('submit', onLoginBtn);
     } else {

@@ -22,6 +22,22 @@
           </button>
         </div>
       </div>
+
+      <!--github-->
+      <div class="github">
+        <div class="github__title">
+          <span>GitHub</span>
+        </div>
+
+        <div class="github__link">
+          <a
+            href="https://github.com/yejin0528/toy_TodoList_VanillaJS"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
     </nav>
 
     <div class="main-container">
@@ -54,20 +70,27 @@
           <span id="date"></span>
         </div>-->
 
-        <div class="login__column2">
+        <div class="login__column">
           <span id="clock">00:00</span>
         </div>
 
-        <div class="login__column3">
-          <form id="login-form">
-            <input
-              type="text"
-              id="login-input"
-              placeholder="What is your name?"
-              required
-            />
-            <input type="submit" id="login-btn" value="💜" />
-          </form>
+        <div class="login__column">
+          <!--로그아웃 시-->
+          <div id="login__main" class="">
+            <div class="hello">
+              <span>hello</span>
+            </div>
+
+            <form id="login-form">
+              <input
+                type="text"
+                class="login-input"
+                placeholder="What is your name?"
+                required
+              />
+              <input type="submit" id="login-btn" value="💜" />
+            </form>
+          </div>
 
           <!--로그인 시-->
           <div id="greeting" class="hidden">
