@@ -81,11 +81,18 @@ input[type="button"] {
   border-radius: 15px;
 }
 
-.bgm span,
+.bgm__title,
 .bgm__btn {
-  font-size: 25px;
+  font-size: 23px;
   color: #f9f9f9;
 }
+
+.bgm__title {
+  font-size: 25px;
+  margin-right: 3px;
+}
+
+/*GITHUB*/
 
 /*1. todo*/
 .todo {
